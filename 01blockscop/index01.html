@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <ul class="list">
+        <li>목록1</li>
+        <li>목록2</li>
+        <li>목록3</li>
+        <li>목록4</li>
+    </ul>
+
+    <script>
+        //이렇게 사용하는 법 기억해둬야 함. 
+        var lis = document.querySelectorAll(".list li");
+        //var는 함수 스코프 
+        for(var i = 0; i<lis.length; i++){
+            (function(x){ //즉시 실행 함수
+                lis[x].onclick = function(){
+                console.log(x);  
+                }   
+            })(i);
+        }
+
+        // let lis = document.querySelectorAll(".list li");
+        // for(let i = 0; i < lis.length; i++){
+        //     lis[i].onclick = function(){
+        //         console.log(i);
+        //     }
+        // }
+
+    </script>
+
+    <script>
+        let x = 1;
+        //let x =1 //중복 선언 x
+
+        if(true){
+            let x = 10;
+            console.log(x); //10
+        }
+        console.log(x); //1
+
+    </script>
+
+</body>
+</html>
